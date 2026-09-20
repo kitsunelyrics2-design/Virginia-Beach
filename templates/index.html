@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Defines the document as HTML and sets the language to English -->
+
+<head> <!-- Creates the head section -->
+    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the webpage work on different screen sizes -->
+    <title>Virginia Beach Quiz</title> <!-- Sets the title of the webpage -->
+    <link rel="icon" href="{{url_for('static', filename='favicon.png')}}"> <!-- Creates the favicon -->
+    <link rel="stylesheet" href="{{url_for('static', filename='reset.css')}}"> <!-- Connects reset.css -->
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> <!-- Connects style.css -->
+</head>
+
+<body> <!-- Creates the body of the webpage -->
+    <div class="background"> <!-- Creates a div with the background class -->
+        <header> <!-- Creates the header section -->
+            <div class="container"> <!-- Creates a container for the navigation -->
+                <nav> <!-- Creates the navigation section -->
+                    <ul class="header_list"> <!-- Creates the navigation list -->
+                        <li><a class="links" href="/weather">Weather</a></li> <!-- Weather link -->
+                        <li><a class="links" href="/results-quiz">Quiz Results</a></li> <!-- Results link -->
+                        <li><a class="links" href="/results-game">Game Results</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main> <!-- Creates the main section of the webpage -->
+            <div class="container"> <!-- Creates a container for the main content -->
+                <h1 class="title">Virginia Beach Quiz</h1> <!-- Displays the title of the quiz -->
+                <form class="main_form" action="/start" method="POST">
+                    <!-- Creates a form that sends the name to the start route -->
+                    <input class="input" type="text" name="name" placeholder="Enter Your Name" required>
+                    <!-- Creates a text box for entering the player's name -->
+                    <br></br> <!-- Creates a line break -->
+                    <button class="btn" type="submit">Start Quiz</button> <!-- Creates a button to start the quiz -->
+                </form> <!-- Ends the quiz form -->
+                <h2 class="sub_title">About Developer</h2> <!-- Displays the About Developer heading -->
+                <p class="primary_text">My name is Nikita, and I love finding new things and trying different ideas.<br>
+                    I really like
+                    technology and creating things,
+                    and I enjoy finding ways to make<br>
+                    myself better. For me, it's all about learning and growing,<br>
+                    and I'm always finding new opportunities to improve myself and become the better.
+                </p> <!-- Displays information about the developer -->
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

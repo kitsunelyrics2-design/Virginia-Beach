@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='reset.css')}}"> <!-- Connects reset.css -->
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> <!-- Connects style.css -->
+</head>
+<body class="background4"> <!-- Makes the entire screen background4 -->
+    <header class="header_list"> <!-- Creates the header -->
+        <nav> <!-- Creates the navigation section -->
+            <ul class="header_list"> <!-- Creates the navigation list -->
+                <li><a class="links" href="/">Home</a></li> <!-- Home link -->
+                <li><a class="links" href="/weather">Weather</a></li> <!-- Weather link -->
+                <li><a class="links" href="/game">Game</a></li> <!-- Game link -->
+            </ul>
+        </nav>
+    </header>
+    <table class="table"> <!-- Creates a table with the table class -->
+        <tr> <!-- Creates a row -->
+            <th>Name</th> <!-- Name column -->
+            <th>Score</th> <!-- Score column -->
+            <th>Score Percentage</th> <!-- Score percentage column -->
+        </tr>
+        {% for result in list_of_results %} <!-- Loops through the results -->
+        <tr> <!-- Creates a row for each result -->
+            <th>{{result[0]}}</th> <!-- Displays the name -->
+            <th>{{result[1]}}/{{question_amount}}</th> <!-- Displays the score -->
+            <th>{{result[2]}}%</th> <!-- Displays the score percentage -->
+        </tr>
+        {% endfor %} <!-- Ends the loop -->
+    </table> <!-- Ends the table -->
+</body>
+</html>

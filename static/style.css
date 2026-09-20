@@ -1,0 +1,246 @@
+*{
+    box-sizing: border-box; /* makes the padding and border included in the width and height */
+}
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif; /* sets the default font family */
+}
+a, button{
+    cursor: pointer; /* when hovering over a button the cursor is a pointer */
+}
+a{
+    text-decoration: none; /* sets the text decorations to nothing, for links because they are underlined by default */
+}
+button{
+    border: none; /* sets the button border to none */
+}
+.container{
+    max-width: 1400px; /* sets the max width of the container to 1400px */
+    margin: 0 auto; /* centers the container */
+}
+.title {
+    text-align: center; /* centers the text */
+    font-size: 60px; /* sets the font size to 60 px */
+    margin-bottom: 20px; /* makes the gap at the bottom 20px */
+}
+.btn{
+    background-color:#000; /* sets the background color of the button to black */
+    color:#fff; /* sets the text color to white */
+    border: #000 solid 1px; /* sets the border color to black, type of border to solid and the width of the border to 1px */
+    padding: 10px; /* sets padding to 10px */
+    border-radius: 6px; /* sets the radius of the border to 6px */
+    margin-top: 20px; /* leaves a 20px gap above the button */
+}
+.btn-link{
+    max-width: 300px; /* sets the maximum width of the button link to 200px */
+    width: 100%; /* sets width to 100% */
+    display: inline-block; /* makes it so the elements stay together but you can still adjust the sizes */
+}
+.question_form{
+    max-width: 750px; /* sets the max width of the form to 750px */
+    display: flex; /* makes it easier to move elements around */
+    justify-content: center;
+    align-items: center;
+    border: #000 solid 1px; /* sets the border color to black, sets the type of the border to solid and sets the width of the border to 1px */
+    border-radius: 6px; /* sets the border radius to 6px */
+    padding: 20px; /* makes the gap to all sides 20px */
+    margin: 0 auto; /* centers the form */
+}
+.main_form{
+    display: flex; /* makes it easier to move the form around */
+    flex-direction: column; /* sets the direction of flex to column */
+    border-radius: 6px; /* sets the border radius to 6px */
+    border: #000 solid 4px; /* sets the border color to black, border type to solid, border width to 4px */
+    max-width: 250px; /* sets max width to 250px */
+    margin: 20px auto; /* centers the form and gives a 20px gap between other objects */
+    padding: 10px; /* leaves a 10px gap on all sides of the form */
+}
+.question_list{
+    display: grid; /* makes it easier to arrange the questions in rows and columns */
+    grid-template-columns: repeat(2, 300px); /* makes it so there are 2 questions in a 200px wide column */
+    grid-template-rows: repeat(2, 50px); /* makes it so there are 2 questions in a 30px tall row */
+    gap: 20px; /* leaves a 20px gap between the questions */
+}
+.input{
+    background-color: #000; /* sets the background color of the input to black */
+    color: #fff; /* sets the text color of the input to white */
+    border: none; /* sets the border to none */
+    outline: none; /* makes it so that there is no outline */
+    padding: 10px; /* makes the text box 10px wide on all sides */
+}
+.sub_title{
+    text-align: center; /* centers the text */
+    font-size: 35px; /* sets the font size to 35px */
+    margin: 20px 0; /* leaves a 20px gap on the bottom and top of the text */
+}
+.primary_text{
+    text-align: center; /* centers the text */
+    color: #fff; /* sets the color of the text to white */
+    background-color: #000; /* sets the background color to black */
+    border-radius: 8px; /* sets the border radius to 8px */
+    padding: 20px; /* sets the padding to 20px */
+    margin: 0 auto; /* centers the text horizontally */
+    width: fit-content; /* makes sure that the background is not too wide */
+    font-size: 20px; /* sets the font size to 20px */
+    line-height: 24px; /* sets the line height to 24px */
+    letter-spacing: 5px; /* sets the letter spacing to 5px */
+}
+.secondary_text{
+    text-align: center; /* centers the text */
+    color: #fff; /* sets the text color to white */
+    background-color: #000; /* sets the background color to black */
+    border-radius: 8px; /* sets the border radius to 8px */
+    padding: 20px; /* sets the padding to 20px */
+    margin: 0 auto; /* centers the text horizontally */
+    width: fit-content; /* makes sure that the background of the text fits the text */
+    letter-spacing: 2px; /* sets the letter spacing to 2px */
+    line-height: 18px; /* sets the line height to 18px */
+    font-size: 16px; /* sets the font size to 16px */
+}
+.header_nav_list{
+    display: flex; /* makes it easier to arrange the items */
+    justify-content: center; /* centers the items */
+    gap: 20px; /* leaves a 20px gap between the items */
+    align-items: center; /* centers the items vertically */
+    padding: 20px; /* leaves a 20px gap around the list */
+}
+.greeting{
+    text-align: center; /* centers the text */
+    color: #fff; /* sets the text color to white */
+    background-color: #000; /* sets the background color to black */
+    border-radius: 8px; /* sets the border radius to 8px */
+    padding: 10px; /* sets the padding to 10px */
+    margin: 0 auto; /* centers the greeting */
+    width: fit-content; /* makes the background fit the text */
+    display: block; /* makes the greeting take up its own line */
+}
+.background{
+    background-image: url("background.jpg"); /* sets the background image */
+    background-size: cover; /* makes the background image cover the whole area */
+    min-height: 100vh; /* makes the background at least the height of the screen */
+}
+.background2{
+    background-image: url("/static/background2.jpg"); /* sets the background image */
+    background-size: cover; /* makes the background image cover the whole area */
+    min-height: 100vh; /* makes the background at least the height of the screen */
+    display: flex; /* makes it easier to move the items around */
+    flex-direction: column; /* puts the items in a column */
+    gap: 50px; /* leaves a 50px gap between the items */
+}
+.question_main{
+    margin-top: 50px; /* leaves a 50px gap above the questions */
+}
+.question_wrapper{
+    display: flex; /* makes it easier to move the items around */
+    flex-direction: column; /* puts the items in a column */
+    gap: 50px; /* leaves a 50px gap between the items */
+}
+.weather_item {
+    display: flex; /* makes it easier to move the weather information around */
+    align-items: center; /* centers the items vertically */
+    justify-content: space-between; /* puts space between the items */
+    gap: 15px; /* leaves a 15px gap between the items */
+    background-color: #000; /* sets the background color to black */
+    border-radius: 10px; /* sets the border radius to 10px */
+    width: 350px; /* sets the width to 350px */
+    height: 90px; /* sets the height to 90px */
+    padding: 4px; /* sets the padding to 4px */
+    margin: 10px auto; /* centers the weather item and leaves a 10px gap */
+}
+.weather_item img {
+    width: 60px; /* sets the image width to 60px */
+    height: 60px; /* sets the image height to 60px */
+    object-fit: contain; /* makes sure the whole image fits inside the box */
+}
+.weather_list{
+    display: grid; /* makes it easier to arrange the weather items */
+    grid-template-columns: repeat(3, 1fr); /* makes 3 equal columns */
+    gap: 30px; /* leaves a 30px gap between the weather items */
+}
+.background3 {
+    background-image: url("/static/background3.webp"); /* sets the background image */
+    background-size: cover; /* makes the background image cover the whole area */
+    background-position: center bottom; /* positions the background at the center bottom */
+    background-repeat: no-repeat; /* stops the background image from repeating */
+    min-height: 100vh; /* makes the background at least the height of the screen */
+}
+.background4{
+    background-image: url("/static/background4.jpg"); /* sets the background image */
+    background-size: cover; /* makes the background image cover the whole area */
+    background-position: center bottom; /* positions the background at the center bottom */
+    background-repeat: no-repeat; /* stops the background image from repeating */
+    min-height: 100vh; /* makes the background at least the height of the screen */
+}
+.links{
+    color: #fff; /* sets the text color to white */
+    background-color: #000; /* sets the background color to black */
+    font-size: 20px; /* sets the font size to 20px */
+    padding: 10px; /* sets the padding to 10px */
+}
+.header_list{
+    display: flex; /* makes it easier to arrange the items */
+    justify-content: center; /* centers the items horizontally */
+    gap: 20px; /* leaves a 20px gap between the items */
+    padding: 20px 0; /* leaves 20px of space above and below the list */
+}
+.p3{
+    text-align: center; /* centers the text */
+    color: #fff; /* sets the text color to white */
+    background-color: #000; /* sets the background color to black */
+    border-radius: 8px; /* sets the border radius to 8px */
+    padding: 5px; /* sets the padding to 5px */
+    margin: 0 auto; /* centers the text horizontally */
+    width: fit-content; /* makes the background fit the text */
+    display: block; /* makes the paragraph take up its own line */
+    margin-bottom: 13px; /* leaves a 13px gap below the paragraph */
+    letter-spacing: 2px; /* sets the letter spacing to 2px */
+    line-height: 18px; /* sets the line height to 18px */
+}
+.p4{
+    text-align: center; /* centers the text */
+    color: #fff; /* sets the text color to white */
+    background-color: #000; /* sets the background color to black */
+    border-radius: 8px; /* sets the border radius to 8px */
+    padding: 12px; /* sets the padding to 12px */
+    margin: 0 auto; /* centers the text horizontally */
+    width: fit-content; /* makes the background fit the text */
+    display: block; /* makes the paragraph take up its own line */
+    margin-bottom: 13px; /* leaves a 13px gap below the paragraph */
+    letter-spacing: 2px; /* sets the letter spacing to 2px */
+    line-height: 18px; /* sets the line height to 18px */
+    margin-top: 70px; /* leaves a 70px gap above the paragraph */
+}
+.p5{
+    text-align: center; /* centers the text */
+    color: #fff; /* sets the text color to white */
+    background-color: #000; /* sets the background color to black */
+    border-radius: 8px; /* sets the border radius to 8px */
+    padding: 20px; /* sets the padding to 20px */
+    margin: 0 auto; /* centers the text horizontally */
+    width: fit-content; /* makes the background fit the text */
+    display: block; /* makes the paragraph take up its own line */
+    margin-bottom: 13px; /* leaves a 13px gap below the paragraph */
+    letter-spacing: 2px; /* sets the letter spacing to 2px */
+    line-height: 18px; /* sets the line height to 18px */
+    margin-top: 70px; /* leaves a 70px gap above the paragraph */
+}
+.table{
+    text-align: center; /* centers the text */
+    color: #fff; /* sets the text color to white */
+    background-color: #000; /* sets the background color to black */
+    border-radius: 8px; /* sets the border radius to 8px */
+    padding: 12px; /* sets the padding to 12px */
+    margin: 0 auto; /* centers the text horizontally */
+    width: fit-content; /* makes the background fit the text */
+    display: block; /* makes the paragraph take up its own line */
+    margin-bottom: 13px; /* leaves a 13px gap below the paragraph */
+    letter-spacing: 2px; /* sets the letter spacing to 2px */
+    line-height: 30px; /* sets the line height to 30px */
+    margin-top: 70px; /* leaves a 70px gap above the paragraph */
+}
+.background5{
+    background-image: url("/static/background5.jpg"); /* sets the background image */
+    background-size: cover; /* makes the background image cover the whole area */
+    background-position: center bottom; /* positions the background at the center bottom */
+    background-repeat: no-repeat; /* stops the background image from repeating */
+    min-height: 100vh; /* makes the background at least the height of the screen */
+}

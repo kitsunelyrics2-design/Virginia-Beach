@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Defines the document as HTML and sets the language to English -->
+
+<head> <!-- Creates the head section -->
+    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the webpage work on different screen sizes -->
+    <title>Weather</title> <!-- Sets the title of the webpage -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='reset.css') }}"> <!-- Connects reset.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Connects style.css -->
+</head>
+
+<body> <!-- Creates the body of the webpage -->
+    <div class="background3"> <!-- Creates a div with the background3 class -->
+        <header class="header_list"> <!-- Creates the header -->
+            <div class="container"> <!-- Creates a container for the navigation -->
+                <nav> <!-- Creates the navigation section -->
+                    <ul class="header_list"> <!-- Creates the navigation list -->
+                        <li><a class="links" href="/">Home</a></li> <!-- Home link -->
+                        <li><a class="links" href="/results-game">Game Results</a></li> <!-- Results link -->
+                        <li><a class="links" href="/results-quiz">Quiz Results</a></li> <!-- Results link -->
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main> <!-- Creates the main section of the webpage -->
+            <div class="container"> <!-- Creates a container for the weather content -->
+                <h1 class="title">Weather App</h1> <!-- Displays the title of the weather app -->
+                <p class="primary_text">Welcome to our weather app. To get started enter the city you want to discover!
+                </p> <!-- Displays instructions for the weather app -->
+                <form class="main_form" action="/weather" method="post">
+                    <!-- Creates a form that sends the city to the weather route -->
+                    <input class="input" type="text" name="city" placeholder="Enter City" required>
+                    <!-- Creates a text box for entering a city -->
+                    <button class="btn" type="submit">Get Weather</button> <!-- Creates a button to submit the city -->
+                </form>
+                {% if weather %} <!-- Checks if weather information is available -->
+                <h2 class="sub_title">{{ weather.location.name }}</h2> <!-- Displays the name of the selected city -->
+                <ul class="weather_list"> <!-- Creates a list for the weather information -->
+                    <li class="weather_item"> <!-- Creates an item for the temperature -->
+                        <p class="secondary_text">Temperature: {{ weather.current.temp_f }}°F</p>
+                        <!-- Displays the current temperature -->
+                        <img alt="Temperature" src="/static/tempature.jpg"> <!-- Displays the temperature image -->
+                    </li>
+                    <li class="weather_item"> <!-- Creates an item for the feels-like temperature -->
+                        <p class="secondary_text">Feels Like: {{ weather.current.feelslike_f }}°F</p>
+                        <!-- Displays the feels-like temperature -->
+                        <img alt="Sun" src="/static/sun.jpg"> <!-- Displays the sun image -->
+                    </li>
+                    <li class="weather_item"> <!-- Creates an item for the cloud percentage -->
+                        <p class="secondary_text">Clouds: {{ weather.current.cloud }}%</p>
+                        <!-- Displays the cloud percentage -->
+                        <img alt="Clouds" src="/static/clouds.jpg"> <!-- Displays the clouds image -->
+                    </li>
+                    <li class="weather_item"> <!-- Creates an item for the wind speed -->
+                        <p class="secondary_text">Wind: {{ weather.current.wind_mph }} mph</p>
+                        <!-- Displays the wind speed -->
+                        <img alt="Windy" src="/static/windy.jpg"> <!-- Displays the windy image -->
+                    </li>
+                    <li class="weather_item"> <!-- Creates an item for the wind direction -->
+                        <p class="secondary_text">Wind Direction: {{ weather.current.wind_dir }}</p>
+                        <!-- Displays the direction the wind is blowing -->
+                        <img alt="Wind Direction" src="/static/wind direction.jpg">
+                        <!-- Displays the wind direction image -->
+                    </li>
+                    <li class="weather_item"> <!-- Creates an item for the air pressure -->
+                        <p class="secondary_text">Pressure: {{ weather.current.pressure_in }} in</p>
+                        <!-- Displays the current air pressure -->
+                        <img alt="Pressure" src="/static/pressure.jpg"> <!-- Displays the pressure image -->
+                    </li>
+                    <li class="weather_item"> <!-- Creates an item for visibility -->
+                        <p class="secondary_text">Visibility: {{ weather.current.vis_miles }} miles</p>
+                        <!-- Displays the current visibility -->
+                        <img alt="Visibility" src="/static/visibilty.jpg"> <!-- Displays the visibility image -->
+                    </li>
+                    <li class="weather_item"> <!-- Creates an item for the UV index -->
+                        <p class="secondary_text">UV Index: {{ weather.current.uv }}</p>
+                        <!-- Displays the current UV index -->
+                        <img alt="Sun" src="/static/sun.jpg"> <!-- Displays the sun image -->
+                    </li>
+                    <li class="weather_item"> <!-- Creates an item for the weather condition -->
+                        <p class="secondary_text">Condition: {{ weather.current.condition.text }}</p>
+                        <!-- Displays the current weather condition -->
+                        <img alt="Dolphin" src="/static/dolphin.jpg"> <!-- Displays the weather condition image -->
+                    </li>
+                </ul> <!-- Ends the weather information list -->
+            </div>
+        </main>
+    </div>
+    {% endif %} <!-- Ends the check for weather information -->
+    {% if error %} <!-- Checks if there is an error -->
+    <p>{{ error }}</p> <!-- Displays the error message -->
+    {% endif %} <!-- Ends the check for an error -->
+</body>
+
+</html>

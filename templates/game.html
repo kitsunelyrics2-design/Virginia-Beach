@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title> <!-- The page name -->
+    <link rel="stylesheet" href="{{url_for('static', filename='reset.css')}}"> <!-- Connects reset.css -->
+    <link rel="stylesheet" href="{{url_for('static', filename='game.css')}}"> <!-- Connects game.css -->
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="header">
+            <div class="hud">
+                <p>Player: <strong>{{name}}</strong></p>
+                <p>Weight: <strong id="score">0</strong></p>
+                <p>Lives: <strong id="lives">❤️❤️❤️</strong></p>
+            </div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="gameOver" class="game_over hidden">
+            <h1>Game Over!</h1>
+            <p>Score:<span id="finalScore"></span></p>
+            <a class="links" href="/results-game">Game Results</a>
+            <button onclick="location.href='/game'">Play Again</button>
+        </div>
+
+    </div>
+    <script>
+        const playerName = "{{name}}"
+    </script>
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+</body>
+
+</html>

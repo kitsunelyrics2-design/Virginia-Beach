@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Defines the document as HTML and sets the language to English -->
+
+<head> <!-- Creates the head section -->
+    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the webpage work on different screen sizes -->
+    <title>Quiz</title> <!-- Sets the title of the webpage -->
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> <!-- Connects style.css -->
+    <link rel="stylesheet" href="{{url_for('static', filename='reset.css')}}"> <!-- Connects reset.css -->
+</head>
+
+<body> <!-- Creates the body of the webpage -->
+    <div class="background2"> <!-- Creates a div with the background2 class -->
+        <header> <!-- Creates the header section -->
+            <div class="container"> <!-- Creates a container for the navigation -->
+                <nav> <!-- Creates the navigation section -->
+                    <ul class="header_nav_list"> <!-- Creates the navigation list -->
+                        <li><a class="links" href="/">Home</a></li> <!-- Home link -->
+                        <li><a class="links" href="/weather">Weather</a></li> <!-- Weather link -->
+                        <li><a class="links" href="/results-game">Game Results</a></li> <!-- Results link -->
+                        <li><a class="links" href="/results-quiz">Quiz Results</a></li> <!-- Results link -->                </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="question_main"> <!-- Creates the main section of the quiz -->
+            <div class="container question_wrapper"> <!-- Creates a container to hold the quiz content -->
+                <h1 class="title">Quiz</h1> <!-- Displays the Quiz title -->
+                <p class="primary_text">Welcome, {{name}}!</p>
+                <!-- Displays a welcome message using the player's name -->
+                <h2 class="sub_title">{{current_question}}.
+                    {{questions.question}}
+                </h2> <!-- Displays the current question number and question -->
+                <form class="question_form" action="answer" method="POST">
+                    <!-- Creates a form that sends the selected answer to the answer route -->
+                    <ul class="question_list"> <!-- Creates a list for the answer choices -->
+                        {% for choice in questions["choices"] %} <!-- Loops through each answer choice -->
+                        <li class="question_item"> <!-- Creates a list item for each answer choice -->
+                            <button class="btn btn-link" name="answer" value="{{loop.index0}}"
+                                type="submit">{{choice}}</button> <!-- Creates a button for each answer choice -->
+                        </li> <!-- Ends the answer choice item -->
+                        {% endfor %} <!-- Ends the loop through the answer choices -->
+                    </ul> <!-- Ends the answer choice list -->
+
+                </form> <!-- Ends the quiz form -->
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

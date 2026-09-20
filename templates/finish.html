@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finish</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='reset.css')}}"> <!-- Connects reset.css -->
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}"> <!-- Connects style.css -->
+</head>
+
+<body>
+    <div class="background2"> <!-- Creates the background -->
+        <header class="header_list"> <!-- Creates the header -->
+            <div class="container"> <!-- Creates the container -->
+                <nav> <!-- Creates the navigation section -->
+                    <ul class="header_list"> <!-- Creates the navigation list -->
+                        <li><a class="links" href="/">Home</a></li> <!-- Home link -->
+                        <li><a class="links" href="/weather">Weather</a></li> <!-- Weather link -->
+                        <li><a class="links" href="/results-game">Game Results</a></li> <!-- Results link -->
+                        <li><a class="links" href="/results-quiz">Quiz Results</a></li> <!-- Results link -->
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main> <!-- Creates the main section -->
+            <div class="container"> <!-- Creates the container -->
+                <p class="secondary_text">Great job, {{name}}! You've completed the quiz and scored
+                    {{score}}/{{question_amount}}.
+                </p> <!-- Displays the player's name and score -->
+
+                <p class="secondary_text">This is your {{attempts}} time completing this quiz!</p>
+                <!-- Displays how many times the player completed the quiz -->
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
