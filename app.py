@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, redirect, url_for, jsonify # Imports all the Flask tools
+from flask import Flask, render_template, request, session, redirect, url_for, jsonify, os # Imports all the Flask tools
 from questions import questions # Imports questions from the questions.py file
 from dotenv import load_dotenv # Imports the load_dotenv function from the dotenv module
 import requests # Sends HTTP requests
@@ -276,4 +276,7 @@ def get_score():
 
 # Starts the Flask application
 if __name__ == "__main__":
-    app.run()
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000))
+    )
